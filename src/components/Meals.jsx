@@ -1,11 +1,12 @@
 import {useEffect, useState} from "react";
+import MealItems from "./MealItems.jsx";
 
 export default function Meals() {
     const [loadedMeals, setLoadMeals] = useState([]);
     useEffect(() => {
         async function fetchMeals() {
             try {
-                const response = await fetch('https://api.example.com/meals');
+                const response = await fetch('http://localhost:3000/meals');
                 if (!response.ok) {
                      new Error('Network response was not ok');
                 }
@@ -23,7 +24,7 @@ export default function Meals() {
 
 
             <ul id="meals">
-                {loadedMeals.map((meal) => ( <li key={meal.id}>{meal.name}</li>  ))}
+                {loadedMeals.map((meal) => ( <MealItems key={meal.id} meal={meal} />  ))}
             </ul>
 
     );
