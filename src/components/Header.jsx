@@ -20,7 +20,7 @@ export default function Header() {
           <h1>Order Food</h1>
       </div>
         <nav>
-            <Button textOnly onClick={handleShowCart}>Cart ({totalCartItems})</Button>
+            <Button  onClick={handleShowCart} textOnly>Cart ({totalCartItems})</Button>
         </nav>
     </header>
   );
